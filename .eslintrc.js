@@ -16,6 +16,11 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    '@typescript-eslint/no-var-requires': 'off', //requires引用的警告忽视
+    '@typescript-eslint/no-explicit-any': ['off'], //any类型警告忽视
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'vue/no-mutating-props': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off' //断言警告忽视
   }
 };

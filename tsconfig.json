@@ -1,28 +1,38 @@
 {
+  //编译选项
   "compilerOptions": {
-    "target": "esnext",
+    //需要进行编译的目标代码（ts -> js(es6/7/8)）,这里转化完后会再用babel转化成es5
+    "target": "esnext", //编译的代码是es5往上（最后有babel转成es5）
+    //目标代码需要使用的模块化方案（common.js,require/module.export/es module import/export）
     "module": "esnext",
+    //是否一些严格的检测
     "strict": true,
-    "jsx": "preserve",
+    //对jsx处理方式
+    "jsx": "preserve", //保留
+    //辅助的导入功能
     "importHelpers": true,
+    //按照node的方式解析模块 import
     "moduleResolution": "node",
+    //跳过对一些库的类型检测（axios,elementsplus这些）
     "skipLibCheck": true,
+    //esmodule和commonetjs能不能混合一起使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    //要不要生成映射文件
     "sourceMap": true,
-    "baseUrl": ".",
+    //文件路径在解析时基本的url
+    "baseUrl": ".", //基于当前文件
+    //指定具体要解析使用的类型
     "types": ["webpack-env"],
+    //路径解析，类似与webpack的alias
     "paths": {
       "@/*": ["src/*"]
     },
+    //可以指定在项目中可以使用哪些库的类型
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
+  //需要编译的文件类型
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  //不需要编译的文件类型
   "exclude": ["node_modules"]
 }
