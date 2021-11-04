@@ -78,4 +78,4 @@ export const technologyStacks = [
     title: '自动部署',
     desp: 'Centos + Jenkins + Nginx'
   }
-]
+];
